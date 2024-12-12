@@ -7,18 +7,19 @@ let end;
 let start;
 let boundaries;
 let status_display; 
-
+let time;
 document.addEventListener("DOMContentLoaded", loadPage);
 
-function setTimer(time){
+function setTimer(){
     document.getElementById("timer").innerHTML = "Timer: " + time;
     let timer = setInterval(function(){
         time--;
         document.getElementById("timer").innerHTML = "Timer: " + time;
-        if(time < 0){
+        if(time == 0){
             clearInterval(timer);
             is_game_running = false;
             displayScore("Time's up!");
+            gameOver()
         }
         if(!is_game_running){
             clearInterval(timer);
@@ -39,12 +40,18 @@ function gameOver(){
             score = score - 1;
         displayScore("Game Over!");
         is_game_running = false;
+    }else{
+        if(time == 0){
+            score = score - 1;
+            displayScore("Game Over!");
+        }
     }
 }
 
 function startGame(){
     displayScore("");
-    setTimer(30);
+    time = 5;
+    setTimer();
     is_game_running = true;
     for(let i = 0; i < boundaries.length; i++)
         boundaries[i].style.backgroundColor = "#eeeeee"; 
