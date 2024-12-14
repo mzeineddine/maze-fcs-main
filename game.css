@@ -19,7 +19,7 @@ p {
 	width: 500px;
 }
 
-#start, #end {
+#start, #end{
 	position: absolute;
 	top: 205px;
 	height: 30px;
@@ -41,6 +41,30 @@ p {
 #game #end {
 	background-color: #8888ff;
 	right: 0;
+}
+
+#resetGame{
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border: 1px solid black;
+	padding: 5px;
+	background-color: #ff8888;
+	font-family: "Helvetica", "Arial", sans-serif;
+	text-align: center;
+}
+#game #key {
+    position: relative;
+	height: 15px;
+	width: 15px;
+	border: 1px solid black;
+	padding: 5px;
+	cursor: default;
+	background-color: aqua;
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 12.5pt;
+	text-align: center;
+	z-index: 0;
 }
 
 div.boundary {
@@ -110,3 +134,4 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	height: 150px;
 	width: 98px;
 }
+
